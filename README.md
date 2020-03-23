@@ -1,7 +1,8 @@
 # COVID19
 COVID19 Technology Platform
 
-Phase 1 : Planned Release by 1st April,2020
+Phase 1 : COVID19 StageIII Tracker App
+(Planned Release by 1st April,2020)
 
 Requirements:
 I> User Signup & Profile:
@@ -14,11 +15,14 @@ II> COVID19 Symptoms part of User profile
 1. I do not have any symptoms/I have symptoms with travel history/I have symptoms without travel history
 
 III> System to validate the vulnerability of the user based on profile and suggest
+1. Users get alaerted based on touchpoints about vulnerabilities
+2. Users can always update their COVID19 profile
 
 IV> Continuous background sensing to nearby touchpoints of the users around
 1. Touchpoints are validated based on Immediate/Near/Far regions of the other users around
 2. Alert and warn the user based on touchpoints and the profile of the touchpoints
 3. User can be asked to wash hands/see doctor/self quarantine etc
+4. Users to update their COVID19 profile with the current status(A easy UX as this is the cruitial step)
 
 V> Ability to trace and identify potential threats based on their profile and travel history(Google Maps data of last 14 days)
 1. Alert users with valid info
@@ -28,4 +32,4 @@ IV? Cloud design & architecture
 1. Privacy first architecture
 2. User, Role and permissions management
 3. Loosly coupled architecture for extensibility 
-4. Local authorities interface to monitor users and their vulnerabilities
+4. Local authorities interface to monitor StageIII users and their vulnerabilities(Best UX with heatchart for easy tracing for authorities)
