@@ -33,3 +33,4 @@ IV? Cloud design & architecture
 2. User, Role and permissions management
 3. Loosly coupled architecture for extensibility 
 4. Local authorities interface to monitor StageIII users and their vulnerabilities(Best UX with heatchart for easy tracing for authorities)
+5. Interation with other open APIs for travel, disease, alert related data. validate https://api.covid19india.org/
