@@ -1,36 +1,69 @@
 # COVID19
-COVID19 Technology Platform
+COVID19 Technology Platform 
+ Introduction: The idea is to build an app where we collect data from the individuals regarding their symptoms, travel history and use this data to sort them into different risk categories (Red, Orange, Yellow and Green). This data will be used to caution users and provide information regarding areas that are high risk and to calculate the number of touch points they have.  
 
-Phase 1 : COVID19 StageIII Tracker App
-(Planned Release by 1st April,2020)
+Phase 1: COVID19 Stage III Tracker App 
+Planned Release by 1st April,2020 for Android
+Release Targets:
+1.	Sign Up
+2.	Profile Setup with 
+a.	General Information
+b.	Existing Health History
+c.	Symptoms
+d.	Travel History and Exposure
+i.	Includes manual entries as well as data from Google Maps
+3.	Determine Risk Factor and Alert Users
+a.	Provide advice on next steps in case of exposure
+b.	Alert users if a high risk individual is in the vicinity
+c.	Create Risk zones (High/ Medium/ Low) based on the data
+4.	Provide a cloud solution for local authorities to monitor the situation using Heat Maps
+Detailed Requirements: 
+ 
+I.	Sign Up using 2-step Verification 
+The user will download the app from the store and sign-up with their mobile number using a 2-step verification process 
+ 
+II.	Profile Setup 
+The following data is collected from the user to determine their exposure and risk 
+a.	General Information: Name, Age, Gender, Area of Residence 
+b.	Existing Health History: This is to determine if the user is at a higher risk  
+c.	Symptoms  
+i.	Level 1: Temperature, Cough, Cold, Body Aches, Sore Throat, Headache 
+ii.	Level 2: Moderate to Severe Cough, Breathlessness, Difficulty in Breathing, Persistent Pain, Severe Weakness 
+An existing API or application can be used to calculate the severity of the symptoms. An Alternative would be to build a point based calculator 
+ 
+d.	Travel History and Exposure 
+The user will be asked to provide their travel history for the past 14 days. The following data will be collected and it will be used to determine the exposure they had to the COVID-19 virus and the probability that they could be carriers is calculated 
+i.	Out of Country Travel  
+ii.	Interstate/ City Travel  
+iii.	Within the City Travel – Public areas like Markets, Super Markets, Airports, Railway Stations etc. Are areas with high exposure 
+iv.	Contact with individuals with confirmed COVID in the past 14 days 
+A point system will be used to determine the exposure levels 
+ 
+III.	Determine Risk Factor and Alert Users 
+A combination of Health History, Symptoms and Travel History is used to determine the risk factor and categorize the user into different zones. This data will be used for the following, 
+a.	Provide advice to users according to their risk factor and local health care contact details if required.  
+For example: User with high exposure and mild to no symptoms will be advised to self-isolate. Additional info regarding self-isolation will be provided 
+•	As much as possible, you should limit your contact with people other than the family members/companions you travelled with 
+•	You should avoid having visitors to your home 
+•	But it is okay for friends, family or delivery drivers to drop off food and supplies 
+b.	Alert other users if a high risk individual is in their immediate area 
+c.	Continuous Background sensing and Touch Point calculation 
+i.	Determine regions/zones and represent them using color codes  
+ii.	User will be able to search for an area and see if it is a high risk zone 
+iii.	Alert and warn the user based on touchpoints and the profile of the touchpoints 
+iv.	Advise the user on next steps (wash hands/ Self-isolation/ see doctor) based on the exposure (See III. a) 
+ 
+IV.	Ability to trace and identify potential threats based on their profile and travel history 
+Using Google Maps, the users travel history can be mapped for the past 14 days and this data can be used to identify potential threats and 
+a.	Alert users with valid info 
+b.	Share with local authorities about threats and zones. A cloud login can be provided for local authorities to access this information 
+V.	 Cloud design & architecture 
+a.	Privacy first architecture  
+The privacy of the user is paramount. User information is not shared with anyone except with the local authorities in case of positive cases 
+b.	User, Role and permissions management 
+c.	Loosely coupled architecture for extensibility  
+d.	Local authorities interface to monitor Stage III users and their vulnerabilities (Best UX with heat chart for easy tracing for authorities) 
+5. Integration with other open APIs for travel, disease, alert related data.  
 
-Requirements:
-I> User Signup & Profile:
-1. Ability for the users to download the mobile app(Android for now) and signup using their mobile phone number(2-step verification)
-2. Profile: Signup user is mandated to update his/her profile(Full Name, Age, Gender, Existing Diseases, 2020 Travel history, COVID19 symptoms
-3. Allow to access location and Radios of the Phone for sensing and location sharing purpose
-4. Sign the consent form about sharing meta data of the user to help others. Remember, we wil keep personal data extremely private.
+ 
 
-II> COVID19 Symptoms part of User profile
-1. I do not have any symptoms/I have symptoms with travel history/I have symptoms without travel history
-
-III> System to validate the vulnerability of the user based on profile and suggest
-1. Users get alaerted based on touchpoints about vulnerabilities
-2. Users can always update their COVID19 profile
-
-IV> Continuous background sensing to nearby touchpoints of the users around
-1. Touchpoints are validated based on Immediate/Near/Far regions of the other users around
-2. Alert and warn the user based on touchpoints and the profile of the touchpoints
-3. User can be asked to wash hands/see doctor/self quarantine etc
-4. Users to update their COVID19 profile with the current status(A easy UX as this is the cruitial step)
-
-V> Ability to trace and identify potential threats based on their profile and travel history(Google Maps data of last 14 days)
-1. Alert users with valid info
-2. Share local authorities about threats and zones (All this through cloud login for local authorities)
-
-IV? Cloud design & architecture
-1. Privacy first architecture
-2. User, Role and permissions management
-3. Loosly coupled architecture for extensibility 
-4. Local authorities interface to monitor StageIII users and their vulnerabilities(Best UX with heatchart for easy tracing for authorities)
-5. Interation with other open APIs for travel, disease, alert related data. validate https://api.covid19india.org/
